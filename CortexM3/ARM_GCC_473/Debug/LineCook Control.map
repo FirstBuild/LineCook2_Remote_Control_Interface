@@ -725,19 +725,19 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2ded
+.debug_info     0x00000000     0x2dda
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x147 .\CortexM3\ARM_GCC_473\Debug\main.o
  .debug_info    0x00000147      0x140 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
  .debug_info    0x00000287      0x2ea .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
  .debug_info    0x00000571      0x3c0 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyfitter_cfg.o)
  .debug_info    0x00000931      0x121 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(DMA_1_dma.o)
- .debug_info    0x00000a52       0x9a .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyBootAsmGnu.o)
- .debug_info    0x00000aec      0x93a .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyDmac.o)
- .debug_info    0x00001426      0xcd7 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyLib.o)
- .debug_info    0x000020fd      0x5c3 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyPm.o)
- .debug_info    0x000026c0      0x354 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyFlash.o)
- .debug_info    0x00002a14      0x3d9 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CySpc.o)
+ .debug_info    0x00000a52       0x87 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyBootAsmGnu.o)
+ .debug_info    0x00000ad9      0x93a .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyDmac.o)
+ .debug_info    0x00001413      0xcd7 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyLib.o)
+ .debug_info    0x000020ea      0x5c3 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyPm.o)
+ .debug_info    0x000026ad      0x354 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyFlash.o)
+ .debug_info    0x00002a01      0x3d9 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CySpc.o)
 
 .debug_abbrev   0x00000000      0xc9a
  *(.debug_abbrev)
@@ -785,28 +785,28 @@ END GROUP
  .debug_frame   0x000011a4       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memcpy.o)
  .debug_frame   0x000011cc       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv7-m\libc_s.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x13ea
+.debug_str      0x00000000     0x13d7
  *(.debug_str)
- .debug_str     0x00000000      0x158 .\CortexM3\ARM_GCC_473\Debug\main.o
-                                0x191 (size before relaxing)
- .debug_str     0x00000158       0x77 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
-                                0x1af (size before relaxing)
- .debug_str     0x000001cf      0x112 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
-                                0x26b (size before relaxing)
- .debug_str     0x000002e1      0x151 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyfitter_cfg.o)
-                                0x2bc (size before relaxing)
- .debug_str     0x00000432       0x95 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(DMA_1_dma.o)
-                                0x1d4 (size before relaxing)
- .debug_str     0x000004c7      0x377 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyDmac.o)
-                                0x4d6 (size before relaxing)
- .debug_str     0x0000083e      0x614 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyLib.o)
-                                0x7d1 (size before relaxing)
- .debug_str     0x00000e52      0x371 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyPm.o)
-                                0x4e0 (size before relaxing)
- .debug_str     0x000011c3      0x129 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyFlash.o)
-                                0x2a6 (size before relaxing)
- .debug_str     0x000012ec       0xfe .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CySpc.o)
-                                0x282 (size before relaxing)
+ .debug_str     0x00000000      0x145 .\CortexM3\ARM_GCC_473\Debug\main.o
+                                0x17e (size before relaxing)
+ .debug_str     0x00000145       0x77 .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+                                0x19c (size before relaxing)
+ .debug_str     0x000001bc      0x112 .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+                                0x258 (size before relaxing)
+ .debug_str     0x000002ce      0x151 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyfitter_cfg.o)
+                                0x2a9 (size before relaxing)
+ .debug_str     0x0000041f       0x95 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(DMA_1_dma.o)
+                                0x1c1 (size before relaxing)
+ .debug_str     0x000004b4      0x377 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyDmac.o)
+                                0x4c3 (size before relaxing)
+ .debug_str     0x0000082b      0x614 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyLib.o)
+                                0x7be (size before relaxing)
+ .debug_str     0x00000e3f      0x371 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(cyPm.o)
+                                0x4cd (size before relaxing)
+ .debug_str     0x000011b0      0x129 .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CyFlash.o)
+                                0x293 (size before relaxing)
+ .debug_str     0x000012d9       0xfe .\CortexM3\ARM_GCC_473\Debug\LineCook Control.a(CySpc.o)
+                                0x26f (size before relaxing)
 
 .debug_loc      0x00000000     0x1d00
  *(.debug_loc)

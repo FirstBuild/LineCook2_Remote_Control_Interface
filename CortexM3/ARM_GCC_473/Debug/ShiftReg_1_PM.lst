@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
   24:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     ((uint16) ShiftReg_1_DEFAULT_A0),
   25:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     ((uint16) ShiftReg_1_DEFAULT_A1),
   26:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** 
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 2
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 2
 
 
   27:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     #if(CY_UDB_V0)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
   57 002a C0F20003 		movt	r3, #:upper16:ShiftReg_1_backup
   58 002e 9A80     		strh	r2, [r3, #4]	@ movhi
   55:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** 
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 3
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 3
 
 
   56:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     #if(CY_UDB_V0)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
   89 000c 40F20002 		movw	r2, #:lower16:ShiftReg_1_backup
   90 0010 C0F20002 		movt	r2, #:upper16:ShiftReg_1_backup
   91 0014 5288     		ldrh	r2, [r2, #2]
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 4
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 4
 
 
   92 0016 1A80     		strh	r2, [r3, #0]	@ movhi
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  119 0000 80B5     		push	{r7, lr}
  120              	.LCFI4:
  121              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 5
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 5
 
 
  122              		.cfi_offset 7, -8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  124:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** * Return:
  125:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** *  None.
  126:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** *
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 6
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 6
 
 
  127:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** *******************************************************************************/
@@ -353,34 +353,34 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  198 000c BB000000 		.4byte	.LASF25
  199 0010 01       		.byte	0x1
  200 0011 33000000 		.4byte	.LASF26
- 201 0015 04010000 		.4byte	.LASF27
+ 201 0015 86010000 		.4byte	.LASF27
  202 0019 00000000 		.4byte	.Ldebug_ranges0+0
  203 001d 00000000 		.4byte	0
  204 0021 00000000 		.4byte	0
  205 0025 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 7
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 7
 
 
  206 0029 02       		.uleb128 0x2
  207 002a 01       		.byte	0x1
  208 002b 06       		.byte	0x6
- 209 002c A5010000 		.4byte	.LASF0
+ 209 002c 5B010000 		.4byte	.LASF0
  210 0030 02       		.uleb128 0x2
  211 0031 01       		.byte	0x1
  212 0032 08       		.byte	0x8
- 213 0033 4E010000 		.4byte	.LASF1
+ 213 0033 04010000 		.4byte	.LASF1
  214 0037 02       		.uleb128 0x2
  215 0038 02       		.byte	0x2
  216 0039 05       		.byte	0x5
- 217 003a D0010000 		.4byte	.LASF2
+ 217 003a BD010000 		.4byte	.LASF2
  218 003e 02       		.uleb128 0x2
  219 003f 02       		.byte	0x2
  220 0040 07       		.byte	0x7
- 221 0041 92010000 		.4byte	.LASF3
+ 221 0041 48010000 		.4byte	.LASF3
  222 0045 02       		.uleb128 0x2
  223 0046 04       		.byte	0x4
  224 0047 05       		.byte	0x5
- 225 0048 61010000 		.4byte	.LASF4
+ 225 0048 17010000 		.4byte	.LASF4
  226 004c 02       		.uleb128 0x2
  227 004d 04       		.byte	0x4
  228 004e 07       		.byte	0x7
@@ -407,34 +407,34 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  249 0075 5B       		.byte	0x5b
  250 0076 30000000 		.4byte	0x30
  251 007a 04       		.uleb128 0x4
- 252 007b DA010000 		.4byte	.LASF10
+ 252 007b C7010000 		.4byte	.LASF10
  253 007f 02       		.byte	0x2
  254 0080 5C       		.byte	0x5c
  255 0081 3E000000 		.4byte	0x3e
  256 0085 02       		.uleb128 0x2
  257 0086 04       		.byte	0x4
  258 0087 04       		.byte	0x4
- 259 0088 CA010000 		.4byte	.LASF11
+ 259 0088 80010000 		.4byte	.LASF11
  260 008c 02       		.uleb128 0x2
  261 008d 08       		.byte	0x8
  262 008e 04       		.byte	0x4
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 8
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 8
 
 
- 263 008f 75010000 		.4byte	.LASF12
+ 263 008f 2B010000 		.4byte	.LASF12
  264 0093 02       		.uleb128 0x2
  265 0094 01       		.byte	0x1
  266 0095 08       		.byte	0x8
- 267 0096 5C010000 		.4byte	.LASF13
+ 267 0096 12010000 		.4byte	.LASF13
  268 009a 04       		.uleb128 0x4
- 269 009b 6A010000 		.4byte	.LASF14
+ 269 009b 20010000 		.4byte	.LASF14
  270 009f 02       		.byte	0x2
  271 00a0 F0       		.byte	0xf0
  272 00a1 A5000000 		.4byte	0xa5
  273 00a5 05       		.uleb128 0x5
  274 00a6 6F000000 		.4byte	0x6f
  275 00aa 04       		.uleb128 0x4
- 276 00ab 6F010000 		.4byte	.LASF15
+ 276 00ab 25010000 		.4byte	.LASF15
  277 00af 02       		.byte	0x2
  278 00b0 F1       		.byte	0xf1
  279 00b1 B5000000 		.4byte	0xb5
@@ -443,7 +443,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  282 00ba 02       		.uleb128 0x2
  283 00bb 04       		.byte	0x4
  284 00bc 07       		.byte	0x7
- 285 00bd 0B020000 		.4byte	.LASF16
+ 285 00bd F8010000 		.4byte	.LASF16
  286 00c1 06       		.uleb128 0x6
  287 00c2 06       		.byte	0x6
  288 00c3 03       		.byte	0x3
@@ -475,16 +475,16 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  314 00f2 04       		.uleb128 0x4
  315 00f3 00       		.byte	0
  316 00f4 04       		.uleb128 0x4
- 317 00f5 E1010000 		.4byte	.LASF20
+ 317 00f5 CE010000 		.4byte	.LASF20
  318 00f9 03       		.byte	0x3
  319 00fa 3B       		.byte	0x3b
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 9
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 9
 
 
  320 00fb C1000000 		.4byte	0xc1
  321 00ff 08       		.uleb128 0x8
  322 0100 01       		.byte	0x1
- 323 0101 7C010000 		.4byte	.LASF21
+ 323 0101 32010000 		.4byte	.LASF21
  324 0105 01       		.byte	0x1
  325 0106 32       		.byte	0x32
  326 0107 01       		.byte	0x1
@@ -494,7 +494,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  330 0114 01       		.byte	0x1
  331 0115 08       		.uleb128 0x8
  332 0116 01       		.byte	0x1
- 333 0117 B1010000 		.4byte	.LASF22
+ 333 0117 67010000 		.4byte	.LASF22
  334 011b 01       		.byte	0x1
  335 011c 4C       		.byte	0x4c
  336 011d 01       		.byte	0x1
@@ -504,7 +504,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  340 012a 01       		.byte	0x1
  341 012b 09       		.uleb128 0x9
  342 012c 01       		.byte	0x1
- 343 012d FA010000 		.4byte	.LASF23
+ 343 012d E7010000 		.4byte	.LASF23
  344 0131 01       		.byte	0x1
  345 0132 69       		.byte	0x69
  346 0133 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  374 0002 01       		.byte	0x1
  375 0003 25       		.uleb128 0x25
  376 0004 0E       		.uleb128 0xe
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 10
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 10
 
 
  377 0005 13       		.uleb128 0x13
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  431 003b 49       		.uleb128 0x49
  432 003c 13       		.uleb128 0x13
  433 003d 00       		.byte	0
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 11
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 11
 
 
  434 003e 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  488 0075 00       		.byte	0
  489 0076 3F       		.uleb128 0x3f
  490 0077 0C       		.uleb128 0xc
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 12
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 12
 
 
  491 0078 03       		.uleb128 0x3
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  545              	.LLST1:
  546 002c 00000000 		.4byte	.LFB1
  547 0030 02000000 		.4byte	.LCFI2
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 13
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 13
 
 
  548 0034 0200     		.2byte	0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  602 0006 00000000 		.4byte	.Ldebug_info0
  603 000a 04       		.byte	0x4
  604 000b 00       		.byte	0
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 14
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 14
 
 
  605 000c 0000     		.2byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  641      63655C50 
  642              	.LASF24:
  643 005c 53686966 		.ascii	"ShiftReg_1_Wakeup\000"
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 15
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 15
 
 
  643      74526567 
@@ -881,90 +881,88 @@ ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 1
  656      6973696F 
  656      6E203139 
  656      36363135 
- 657              	.LASF27:
- 658 0104 433A5C55 		.ascii	"C:\\Users\\214016586\\Documents\\PSoC Creator\\Desi"
- 658      73657273 
- 658      5C323134 
- 658      30313635 
- 658      38365C44 
- 659 0132 676E3035 		.ascii	"gn05\\LineCook Control.cydsn\000"
- 659      5C4C696E 
- 659      65436F6F 
- 659      6B20436F 
- 659      6E74726F 
- 660              	.LASF1:
- 661 014e 756E7369 		.ascii	"unsigned char\000"
- 661      676E6564 
- 661      20636861 
- 661      7200
- 662              	.LASF13:
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 16
+ 657              	.LASF1:
+ 658 0104 756E7369 		.ascii	"unsigned char\000"
+ 658      676E6564 
+ 658      20636861 
+ 658      7200
+ 659              	.LASF13:
+ 660 0112 63686172 		.ascii	"char\000"
+ 660      00
+ 661              	.LASF4:
+ 662 0117 6C6F6E67 		.ascii	"long int\000"
+ 662      20696E74 
+ 662      00
+ 663              	.LASF14:
+ 664 0120 72656738 		.ascii	"reg8\000"
+ 664      00
+ 665              	.LASF15:
+ 666 0125 72656731 		.ascii	"reg16\000"
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 16
 
 
- 663 015c 63686172 		.ascii	"char\000"
- 663      00
- 664              	.LASF4:
- 665 0161 6C6F6E67 		.ascii	"long int\000"
- 665      20696E74 
- 665      00
- 666              	.LASF14:
- 667 016a 72656738 		.ascii	"reg8\000"
- 667      00
- 668              	.LASF15:
- 669 016f 72656731 		.ascii	"reg16\000"
- 669      3600
- 670              	.LASF12:
- 671 0175 646F7562 		.ascii	"double\000"
- 671      6C6500
- 672              	.LASF21:
- 673 017c 53686966 		.ascii	"ShiftReg_1_SaveConfig\000"
- 673      74526567 
- 673      5F315F53 
- 673      61766543 
- 673      6F6E6669 
- 674              	.LASF3:
- 675 0192 73686F72 		.ascii	"short unsigned int\000"
- 675      7420756E 
- 675      7369676E 
- 675      65642069 
- 675      6E7400
- 676              	.LASF0:
- 677 01a5 7369676E 		.ascii	"signed char\000"
- 677      65642063 
- 677      68617200 
- 678              	.LASF22:
- 679 01b1 53686966 		.ascii	"ShiftReg_1_RestoreConfig\000"
- 679      74526567 
- 679      5F315F52 
- 679      6573746F 
- 679      7265436F 
- 680              	.LASF11:
- 681 01ca 666C6F61 		.ascii	"float\000"
- 681      7400
+ 666      3600
+ 667              	.LASF12:
+ 668 012b 646F7562 		.ascii	"double\000"
+ 668      6C6500
+ 669              	.LASF21:
+ 670 0132 53686966 		.ascii	"ShiftReg_1_SaveConfig\000"
+ 670      74526567 
+ 670      5F315F53 
+ 670      61766543 
+ 670      6F6E6669 
+ 671              	.LASF3:
+ 672 0148 73686F72 		.ascii	"short unsigned int\000"
+ 672      7420756E 
+ 672      7369676E 
+ 672      65642069 
+ 672      6E7400
+ 673              	.LASF0:
+ 674 015b 7369676E 		.ascii	"signed char\000"
+ 674      65642063 
+ 674      68617200 
+ 675              	.LASF22:
+ 676 0167 53686966 		.ascii	"ShiftReg_1_RestoreConfig\000"
+ 676      74526567 
+ 676      5F315F52 
+ 676      6573746F 
+ 676      7265436F 
+ 677              	.LASF11:
+ 678 0180 666C6F61 		.ascii	"float\000"
+ 678      7400
+ 679              	.LASF27:
+ 680 0186 433A5C55 		.ascii	"C:\\Users\\myles\\Documents\\GitHub\\LineCook Contr"
+ 680      73657273 
+ 680      5C6D796C 
+ 680      65735C44 
+ 680      6F63756D 
+ 681 01b4 6F6C2E63 		.ascii	"ol.cydsn\000"
+ 681      7964736E 
+ 681      00
  682              	.LASF2:
- 683 01d0 73686F72 		.ascii	"short int\000"
+ 683 01bd 73686F72 		.ascii	"short int\000"
  683      7420696E 
  683      7400
  684              	.LASF10:
- 685 01da 75696E74 		.ascii	"uint16\000"
+ 685 01c7 75696E74 		.ascii	"uint16\000"
  685      313600
  686              	.LASF20:
- 687 01e1 53686966 		.ascii	"ShiftReg_1_BACKUP_STRUCT\000"
+ 687 01ce 53686966 		.ascii	"ShiftReg_1_BACKUP_STRUCT\000"
  687      74526567 
  687      5F315F42 
  687      41434B55 
  687      505F5354 
  688              	.LASF23:
- 689 01fa 53686966 		.ascii	"ShiftReg_1_Sleep\000"
+ 689 01e7 53686966 		.ascii	"ShiftReg_1_Sleep\000"
  689      74526567 
  689      5F315F53 
-ARM GAS  C:\Users\214016~1\AppData\Local\Temp\ccXFKTs0.s 			page 17
-
-
  689      6C656570 
  689      00
+ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 17
+
+
  690              	.LASF16:
- 691 020b 73697A65 		.ascii	"sizetype\000"
+ 691 01f8 73697A65 		.ascii	"sizetype\000"
  691      74797065 
  691      00
  692              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
