@@ -18,8 +18,8 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="Design05" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" Version="4.10" Type="Normal">
-    <CMSIS_SVD_File>Design05.svd</CMSIS_SVD_File>
+  <Project Name="LineCook Control" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" Version="4.10" Type="Normal">
+    <CMSIS_SVD_File>LineCook Control.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
       <LinkerFile Toolchain="ARM GCC">.\Generated_Source\PSoC5\cm3gcc.ld</LinkerFile>
@@ -27,13 +27,13 @@
       <LinkerFile Toolchain="IAR EWARM">.\Generated_Source\PSoC5\Cm3Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn">
+      <Folder BuildType="BUILD" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn">
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn\Generated_Source\PSoC5">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn\Generated_Source\PSoC5">
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cymetadata.c</File>
@@ -92,57 +92,68 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\VFD_CLOCK_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\VFD_CLOCK.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\VFD_CLOCK.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SDA_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SDA_1.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SDA_1.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SCL_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SCL_1.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SCL_1.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1_SLAVE.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1_MASTER.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2C_1_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1_IntClock.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_1_IntClock.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CyElfTool.exe</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\libelf.dll</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn\Generated_Source\PSoC5\ARM_GCC">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn\Generated_Source\PSoC5\ARM_GCC">
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC">.\Generated_Source\PSoC5\ARM_GCC\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn\Generated_Source\PSoC5\ARM_Keil_MDK">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn\Generated_Source\PSoC5\ARM_Keil_MDK">
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn">
           <File BuildType="BUILD" Toolchain="ARM Keil MDK">.\Generated_Source\PSoC5\ARM_Keil_MDK\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn\Generated_Source\PSoC5\IAR">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn\Generated_Source\PSoC5\IAR">
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn">
           <File BuildType="BUILD" Toolchain="IAR">.\Generated_Source\PSoC5\IAR\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_951">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\Design05.cydsn" />
+        <Files Root="C:\Users\214016586\Documents\PSoC Creator\Design05\LineCook Control.cydsn" />
       </Folder>
     </Folders>
   </Project>
