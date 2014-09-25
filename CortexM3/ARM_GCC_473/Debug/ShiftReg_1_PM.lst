@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
   24:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     ((uint16) ShiftReg_1_DEFAULT_A0),
   25:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     ((uint16) ShiftReg_1_DEFAULT_A1),
   26:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** 
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 2
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 2
 
 
   27:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     #if(CY_UDB_V0)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
   57 002a C0F20003 		movt	r3, #:upper16:ShiftReg_1_backup
   58 002e 9A80     		strh	r2, [r3, #4]	@ movhi
   55:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** 
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 3
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 3
 
 
   56:.\Generated_Source\PSoC5/ShiftReg_1_PM.c ****     #if(CY_UDB_V0)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
   89 000c 40F20002 		movw	r2, #:lower16:ShiftReg_1_backup
   90 0010 C0F20002 		movt	r2, #:upper16:ShiftReg_1_backup
   91 0014 5288     		ldrh	r2, [r2, #2]
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 4
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 4
 
 
   92 0016 1A80     		strh	r2, [r3, #0]	@ movhi
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  119 0000 80B5     		push	{r7, lr}
  120              	.LCFI4:
  121              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 5
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 5
 
 
  122              		.cfi_offset 7, -8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  124:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** * Return:
  125:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** *  None.
  126:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** *
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 6
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 6
 
 
  127:.\Generated_Source\PSoC5/ShiftReg_1_PM.c **** *******************************************************************************/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  203 001d 00000000 		.4byte	0
  204 0021 00000000 		.4byte	0
  205 0025 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 7
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 7
 
 
  206 0029 02       		.uleb128 0x2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  260 008c 02       		.uleb128 0x2
  261 008d 08       		.byte	0x8
  262 008e 04       		.byte	0x4
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 8
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 8
 
 
  263 008f 2B010000 		.4byte	.LASF12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  317 00f5 CE010000 		.4byte	.LASF20
  318 00f9 03       		.byte	0x3
  319 00fa 3B       		.byte	0x3b
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 9
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 9
 
 
  320 00fb C1000000 		.4byte	0xc1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  374 0002 01       		.byte	0x1
  375 0003 25       		.uleb128 0x25
  376 0004 0E       		.uleb128 0xe
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 10
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 10
 
 
  377 0005 13       		.uleb128 0x13
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  431 003b 49       		.uleb128 0x49
  432 003c 13       		.uleb128 0x13
  433 003d 00       		.byte	0
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 11
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 11
 
 
  434 003e 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  488 0075 00       		.byte	0
  489 0076 3F       		.uleb128 0x3f
  490 0077 0C       		.uleb128 0xc
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 12
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 12
 
 
  491 0078 03       		.uleb128 0x3
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  545              	.LLST1:
  546 002c 00000000 		.4byte	.LFB1
  547 0030 02000000 		.4byte	.LCFI2
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 13
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 13
 
 
  548 0034 0200     		.2byte	0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  602 0006 00000000 		.4byte	.Ldebug_info0
  603 000a 04       		.byte	0x4
  604 000b 00       		.byte	0
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 14
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 14
 
 
  605 000c 0000     		.2byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  641      63655C50 
  642              	.LASF24:
  643 005c 53686966 		.ascii	"ShiftReg_1_Wakeup\000"
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 15
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 15
 
 
  643      74526567 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  664      00
  665              	.LASF15:
  666 0125 72656731 		.ascii	"reg16\000"
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 16
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 16
 
 
  666      3600
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 1
  689      5F315F53 
  689      6C656570 
  689      00
-ARM GAS  C:\Users\myles\AppData\Local\Temp\cc6aBRa6.s 			page 17
+ARM GAS  C:\Users\myles\AppData\Local\Temp\ccRNXuFQ.s 			page 17
 
 
  690              	.LASF16:
