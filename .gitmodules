@@ -1,0 +1,3 @@
+[submodule "e3"]
+	path = e3
+	url = https://github.com/bakerface/e3
