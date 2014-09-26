@@ -92,13 +92,20 @@ static void convBaking_exit(microwave_t *microwave) {
 }
 
 
-#define DMA_1_BYTES_PER_BURST 127
-#define DMA_1_REQUEST_PER_BURST 0
+#define DMA_1_BYTES_PER_BURST 2
+#define DMA_1_REQUEST_PER_BURST 1
 #define DMA_1_SRC_BASE (CYDEV_PERIPH_BASE)
 #define DMA_1_DST_BASE (CYDEV_SRAM_BASE)
 /*define for the number of samples to be transferred to memory on each switch press*/
 #define NO_OF_SAMPLES 3
 uint16 screen_buffer[NO_OF_SAMPLES];
+
+#define TIMEOUT	200u
+#define READ_BUFFER_SIZE	05u
+#define SLAVE_ADDRESS	0x08
+#define MAIN_LOOP_DELAY	10u
+
+uint8 MasterReadBuffer[READ_BUFFER_SIZE];
 
 int main()
 {
@@ -108,13 +115,6 @@ int main()
     uint8 DMA_1_Chan;
     uint8 DMA_1_TD[3];
 
-    /* DMA Configuration for DMA_1 */
-    #define DMA_1_BYTES_PER_BURST 2
-    #define DMA_1_REQUEST_PER_BURST 1
-    #define DMA_1_SRC_BASE (CYDEV_PERIPH_BASE)
-    #define DMA_1_DST_BASE (CYDEV_SRAM_BASE)
-    /*define for the number of samples to be transferred to memory on each switch press*/
-    #define NO_OF_SAMPLES 3
     DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
         HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
     DMA_1_TD[0] = CyDmaTdAllocate();
@@ -129,15 +129,41 @@ int main()
     CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
     CyDmaChEnable(DMA_1_Chan, 1);
 
+    uint16 timeout;
+	uint32 masterStatus;
+	
+
+	CyDelay(1000);	/* wait for P5LP to enable I2C pullups, etc. */
+	
+    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
+	
+	I2C_Start();
+    
 	microwave_t microwave;
    
     e3_hsm_create(&microwave.microwave_sm, readyForCook);
+    
+    uint8 MasterWriteBuffer[] = {0x01,0x00,0x01,0x01,0x17};
+    
 	
+    I2C_MasterWriteBuf(SLAVE_ADDRESS,MasterWriteBuffer,sizeof(MasterWriteBuffer),I2C_MODE_COMPLETE_XFER );
+    CyDelay(5000);
 	
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
         e3_timer_tick();
+        
+        masterStatus = 0;
+		timeout = TIMEOUT;
+		I2C_MasterClearStatus();
+		I2C_MasterClearReadBuf();
+	    I2C_MasterReadBuf(SLAVE_ADDRESS, MasterReadBuffer, sizeof(MasterReadBuffer), I2C_MODE_COMPLETE_XFER);
+		while(!(masterStatus & I2C_MSTAT_RD_CMPLT) && timeout)
+		{
+			masterStatus = I2C_MasterStatus();
+			timeout--;
+		}
 
     }
 }

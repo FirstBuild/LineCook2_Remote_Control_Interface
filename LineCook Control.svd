@@ -12,7 +12,7 @@
       <baseAddress>0x40006422</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0x41</size>
+        <size>0x46</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -35,15 +35,6 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>TX_UART_1_TX_DATA</name>
-          <description>TX Data Register</description>
-          <addressOffset>0x1E</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-        <register>
           <name>RX_UART_1_RX_DATA</name>
           <description>RX Data Register</description>
           <addressOffset>0x20</addressOffset>
@@ -53,48 +44,18 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>TX_UART_1_TX_STATUS</name>
-          <description>TX status register</description>
-          <addressOffset>0x3E</addressOffset>
+          <name>TX_UART_1_TX_DATA</name>
+          <description>TX Data Register</description>
+          <addressOffset>0x25</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>UART_1_TX_STS_COMPLETE</name>
-              <description>No description available</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>UART_1_TX_STS_FIFO_EMPTY</name>
-              <description>No description available</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>UART_1_TX_STS_FIFO_FULL</name>
-              <description>No description available</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>UART_1_TX_STS_FIFO_NOT_FULL</name>
-              <description>No description available</description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
           <name>RX_UART_1_RX_STATUS</name>
           <description>RX status register</description>
-          <addressOffset>0x40</addressOffset>
+          <addressOffset>0x44</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -151,10 +112,49 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>TX_UART_1_TX_STATUS</name>
+          <description>TX status register</description>
+          <addressOffset>0x45</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>UART_1_TX_STS_COMPLETE</name>
+              <description>No description available</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_1_TX_STS_FIFO_EMPTY</name>
+              <description>No description available</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_1_TX_STS_FIFO_FULL</name>
+              <description>No description available</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_1_TX_STS_FIFO_NOT_FULL</name>
+              <description>No description available</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
       </registers>
     </peripheral>
     <peripheral>
-      <name>I2C_1</name>
+      <name>I2C</name>
       <description>No description available</description>
       <baseAddress>0x400049C8</baseAddress>
       <addressBlock>
@@ -164,7 +164,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>I2C_1_FF_XCFG</name>
+          <name>I2C_FF_XCFG</name>
           <description>Extended Configuration Register: I2C_XCFG</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
@@ -210,7 +210,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF_ADDR</name>
+          <name>I2C_FF_ADDR</name>
           <description>Slave Adddress Register: I2C_ADR</description>
           <addressOffset>0x2</addressOffset>
           <size>8</size>
@@ -228,7 +228,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF_CFG</name>
+          <name>I2C_FF_CFG</name>
           <description>Configuration Register: I2C_CFG</description>
           <addressOffset>0xE</addressOffset>
           <size>8</size>
@@ -288,7 +288,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF_CSR</name>
+          <name>I2C_FF_CSR</name>
           <description>Control and Status Register: I2C_CSR</description>
           <addressOffset>0xF</addressOffset>
           <size>8</size>
@@ -355,7 +355,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF_DATA</name>
+          <name>I2C_FF_DATA</name>
           <description>Data Register: I2C_D</description>
           <addressOffset>0x10</addressOffset>
           <size>8</size>
@@ -373,7 +373,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF_MCSR</name>
+          <name>I2C_FF_MCSR</name>
           <description>Master Control and Status Register: I2C_MCSR</description>
           <addressOffset>0x11</addressOffset>
           <size>8</size>
@@ -419,7 +419,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF__CLK_DIV1</name>
+          <name>I2C_FF__CLK_DIV1</name>
           <description>Divider of BUS_CLK low part: I2C_CLK_DIV1</description>
           <addressOffset>0x13</addressOffset>
           <size>8</size>
@@ -437,7 +437,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF__CLK_DIV2</name>
+          <name>I2C_FF__CLK_DIV2</name>
           <description>Divider high part: I2C_CLK_DIV1</description>
           <addressOffset>0x14</addressOffset>
           <size>8</size>
@@ -455,7 +455,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF__TMOUT_CSR</name>
+          <name>I2C_FF__TMOUT_CSR</name>
           <description>Extended Configuration Register: I2C_TMOUT_CSR</description>
           <addressOffset>0x15</addressOffset>
           <size>8</size>
@@ -501,7 +501,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF__TMOUT_SR</name>
+          <name>I2C_FF__TMOUT_SR</name>
           <description>Extended Configuration Register: I2C_TMOUT_SR</description>
           <addressOffset>0x16</addressOffset>
           <size>8</size>
@@ -526,7 +526,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF__TMOUT_CFG0</name>
+          <name>I2C_FF__TMOUT_CFG0</name>
           <description>Extended Configuration Register: TMOUT_CFG0</description>
           <addressOffset>0x17</addressOffset>
           <size>8</size>
@@ -544,7 +544,7 @@
           </fields>
         </register>
         <register>
-          <name>I2C_1_FF__TMOUT_CFG1</name>
+          <name>I2C_FF__TMOUT_CFG1</name>
           <description>Extended Configuration Register: TMOUT_CFG1</description>
           <addressOffset>0x18</addressOffset>
           <size>8</size>
