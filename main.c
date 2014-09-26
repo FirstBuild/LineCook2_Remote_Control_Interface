@@ -91,6 +91,8 @@ static void convBaking_enter(microwave_t *microwave) {
 static void convBaking_exit(microwave_t *microwave) {
 }
 
+uint32 WriteCommandPacket(uint8 cmd);
+
 
 #define DMA_1_BYTES_PER_BURST 2
 #define DMA_1_REQUEST_PER_BURST 1
@@ -102,8 +104,33 @@ uint16 screen_buffer[NO_OF_SAMPLES];
 
 #define TIMEOUT	200u
 #define READ_BUFFER_SIZE	05u
-#define SLAVE_ADDRESS	0x08
 #define MAIN_LOOP_DELAY	10u
+
+/* I2C slave address to communicate with */
+#define SLAVE_ADDRESS  (0x08u)
+
+/* Buffer and packet size */
+#define BUFFER_SIZE     (5u)
+#define PACKET_SIZE     (BUFFER_SIZE)
+
+/* Packet positions */
+#define PACKET_SOP_POS  (0u)
+#define PACKET_CMD_POS  (1u)
+#define PACKET_STS_POS  (PACKET_CMD_POS)
+#define PACKET_EOP_POS  (4u)
+
+/* Start and end of packet markers */
+#define PACKET_SOP      (0x01u)
+#define PACKET_EOP      (0x17u)
+
+/* Command valid status */
+#define STS_CMD_DONE    (0x00u)
+#define STS_CMD_FAIL    (0xFFu)
+
+/* Command valid status */
+#define TRANSFER_CMPLT    (0x00u)
+#define TRANSFER_ERROR    (0xFFu)
+
 
 uint8 MasterReadBuffer[READ_BUFFER_SIZE];
 
@@ -140,16 +167,20 @@ int main()
 	I2C_Start();
     
 	microwave_t microwave;
+	memset(&microwave.microwave_sm,0,sizeof(e3_hsm_t));
    
     e3_hsm_create(&microwave.microwave_sm, readyForCook);
     
-    uint8 MasterWriteBuffer[] = {0x01,0x00,0x01,0x01,0x17};
+    //uint8 MasterWriteBuffer[] = {0x01u,0x00,0x01,0x01,0x17u};
     
+	for(;;)
+    {
+		WriteCommandPacket(0x00);
+    	CyDelay(5000);
+	}
 	
-    I2C_MasterWriteBuf(SLAVE_ADDRESS,MasterWriteBuffer,sizeof(MasterWriteBuffer),I2C_MODE_COMPLETE_XFER );
-    CyDelay(5000);
+    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
 	
-    /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
         e3_timer_tick();
@@ -166,6 +197,44 @@ int main()
 		}
 
     }
+}
+
+
+/*******************************************************************************
+* WriteCommandPacket(): Writes command packet to I2C slave
+*******************************************************************************/
+uint32 WriteCommandPacket(uint8 cmd)
+{
+    uint8  buffer[BUFFER_SIZE];
+    uint32 status = TRANSFER_ERROR;
+
+    /* Initialize buffer with packet */
+    buffer[PACKET_SOP_POS] = PACKET_SOP;
+    buffer[PACKET_CMD_POS] = cmd;
+	buffer[PACKET_CMD_POS + 1] = 7;
+	buffer[PACKET_CMD_POS + 2] = 32;
+    buffer[PACKET_EOP_POS] = PACKET_EOP;
+
+    (void) I2C_MasterWriteBuf(SLAVE_ADDRESS, buffer, PACKET_SIZE, I2C_MODE_COMPLETE_XFER);
+
+    while (0u == (I2C_MasterStatus() & I2C_MSTAT_WR_CMPLT))
+    {
+        /* Waits until master completes write transfer */
+    }
+
+    /* Displays transfer status */
+    if (0u == (I2C_MSTAT_ERR_XFER & I2C_MasterStatus()))
+    {
+        /* Check if all bytes was written */
+        if(I2C_MasterGetWriteBufSize() == BUFFER_SIZE)
+        {
+            status = TRANSFER_CMPLT;
+        }
+    }
+
+    (void) I2C_MasterClearStatus();
+
+    return (status);
 }
 
 /* [] END OF FILE */
