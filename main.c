@@ -91,7 +91,7 @@ static void convBaking_enter(microwave_t *microwave) {
 static void convBaking_exit(microwave_t *microwave) {
 }
 
-uint32 WriteCommandPacket(uint8 cmd);
+uint32 WriteCommandPacket(uint8 cmd, uint8 param1, uint8 param2);
 
 
 #define DMA_1_BYTES_PER_BURST 2
@@ -134,6 +134,23 @@ uint16 screen_buffer[NO_OF_SAMPLES];
 
 uint8 MasterReadBuffer[READ_BUFFER_SIZE];
 
+/* Set USBUART buffer to maximum packet size of the IN and OUT bulk endpoints. */
+#define USB_EP_BUFFER_LEN	64u
+
+/* define constants for Carriage Return, Line Feed and Backspace */
+#define CARRIAGE_RETURN	0x0d
+#define LINE_FEED	0x0a
+#define BACKSPACE	0x08
+
+#define UART_BUFFER_SIZE 3
+
+#define FALSE	0u
+#define TRUE	1u
+
+
+#define PACKET_START  0x01u
+#define PACKET_END    0x17u
+
 int main()
 {
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
@@ -159,10 +176,30 @@ int main()
     uint16 timeout;
 	uint32 masterStatus;
 	
+	/* USB buffer and byte count / pointer */
+	uint8 usb_byte_count;
+    uint8 usb_buffer[USB_EP_BUFFER_LEN];
+	
+	uint8 commandReady = 0;
+	
+	/* temp buffer and byte counter / pointer */
+	uint8 temp_buffer_pointer = 0;
+	uint8 tempBuffer[UART_BUFFER_SIZE];
 
+	
 	CyDelay(1000);	/* wait for P5LP to enable I2C pullups, etc. */
 	
     CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
+	
+	/* Start USBFS Operation with 3V operation */
+    USBUART_Start(0u, USBUART_5V_OPERATION);
+
+    /* Wait for Device to enumerate */
+    while(!USBUART_GetConfiguration());
+
+    /* Enumeration is done, enable OUT endpoint to receive data from Host */
+    USBUART_CDC_Init();
+	
 	
 	I2C_Start();
     
@@ -171,39 +208,71 @@ int main()
    
     e3_hsm_create(&microwave.microwave_sm, readyForCook);
     
-    //uint8 MasterWriteBuffer[] = {0x01u,0x00,0x01,0x01,0x17u};
+    uint8 cookButton[] = {0x01u,0x01,0x00,0x00,0x17u};
+	uint8 pushEnter[] = {0x01u,0x5,0x09,0x0,0x17u};
+	uint8 start[] = {0x01u,0x5,0x0a,0x0,0x17u};
+	uint8 pushOff[] = {0x01u,0x5,0x0b,0x0,0x17u};
     
 	for(;;)
     {
-		WriteCommandPacket(0x00);
-    	CyDelay(5000);
+		
+		/* main loop checks for USBUART input and manages/updates I2C buffer */
+		
+		/* check if there is USB traffic to process */
+		if(USBUART_DataIsReady() != 0u)	/* Check for input data from PC */
+        {   
+            usb_byte_count = USBUART_GetAll(usb_buffer);	/* Read received data and re-enable OUT endpoint */
+            if(usb_byte_count != 0u)
+            {
+				/* if current character is a carriage return and 3 characters have been received, copy temp buffer to I2C buffer and add a LINE FEED */
+				if(usb_buffer[0] == PACKET_START && usb_buffer[4] == PACKET_END)
+				{
+					WriteCommandPacket(usb_buffer[1], usb_buffer[2], usb_buffer[3]);
+					
+					// Clear buffers
+					usb_buffer[0] = 0;
+					usb_buffer[4] = 0;
+				}
+            }
+        }
+	
+		
 	}
 	
-    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
-	
-    for(;;)
-    {
-        e3_timer_tick();
-        
-        masterStatus = 0;
-		timeout = TIMEOUT;
-		I2C_MasterClearStatus();
-		I2C_MasterClearReadBuf();
-	    I2C_MasterReadBuf(SLAVE_ADDRESS, MasterReadBuffer, sizeof(MasterReadBuffer), I2C_MODE_COMPLETE_XFER);
-		while(!(masterStatus & I2C_MSTAT_RD_CMPLT) && timeout)
-		{
-			masterStatus = I2C_MasterStatus();
-			timeout--;
-		}
 
-    }
+//		
+//		CyDelay(5000);
+//		WriteCommandPacket(cookButton);
+//    	CyDelay(500);
+//		WriteCommandPacket(pushEnter);
+//    	CyDelay(500);
+//		WriteCommandPacket(start);
+//    	CyDelay(10000);
+//		WriteCommandPacket(pushOff);
+//    	
+//    for(;;)
+//    {
+//        e3_timer_tick();
+//        
+//        masterStatus = 0;
+//		timeout = TIMEOUT;
+//		I2C_MasterClearStatus();
+//		I2C_MasterClearReadBuf();
+//	    I2C_MasterReadBuf(SLAVE_ADDRESS, MasterReadBuffer, sizeof(MasterReadBuffer), I2C_MODE_COMPLETE_XFER);
+//		while(!(masterStatus & I2C_MSTAT_RD_CMPLT) && timeout)
+//		{
+//			masterStatus = I2C_MasterStatus();
+//			timeout--;
+//		}
+//
+//    }
 }
 
 
 /*******************************************************************************
 * WriteCommandPacket(): Writes command packet to I2C slave
 *******************************************************************************/
-uint32 WriteCommandPacket(uint8 cmd)
+uint32 WriteCommandPacket(uint8 cmd, uint8 param1, uint8 param2)
 {
     uint8  buffer[BUFFER_SIZE];
     uint32 status = TRANSFER_ERROR;
@@ -211,8 +280,8 @@ uint32 WriteCommandPacket(uint8 cmd)
     /* Initialize buffer with packet */
     buffer[PACKET_SOP_POS] = PACKET_SOP;
     buffer[PACKET_CMD_POS] = cmd;
-	buffer[PACKET_CMD_POS + 1] = 7;
-	buffer[PACKET_CMD_POS + 2] = 32;
+	buffer[PACKET_CMD_POS + 1] = param1;
+	buffer[PACKET_CMD_POS + 2] = param2;
     buffer[PACKET_EOP_POS] = PACKET_EOP;
 
     (void) I2C_MasterWriteBuf(SLAVE_ADDRESS, buffer, PACKET_SIZE, I2C_MODE_COMPLETE_XFER);
